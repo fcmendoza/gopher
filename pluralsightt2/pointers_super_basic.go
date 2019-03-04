@@ -14,3 +14,13 @@ func main() {
 	ptr := &name
 	fmt.Println("Pointer to *name* address is", ptr)
 }
+
+/* ----Output----
+
+~/go/src/gopher/pluralsightt2 $ go run pointers_super_basic.go
+
+Value of *name* is Jon
+Memory value of *name* is 0xc000090030
+Pointer to *name* address is 0xc000090030
+
+*/
