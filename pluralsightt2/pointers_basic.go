@@ -26,3 +26,16 @@ func main() {
 func someByRef(some *string) {
 	fmt.Println("Value of *some* is", some, "and its value is", *some)
 }
+
+/* ----Output----
+
+~/go/src/gopher/pluralsightt2 $ go run pointers_basic.go
+
+Value of *name* is Jon
+Memory value of *name* is 0xc000090030
+Pointer (ptr) to *name* address is 0xc000090030
+Pointer (pun) to *name* address is 0xc000090030
+Pointer (poi) to *name* address is 0xc000090030
+Value of *some* is 0xc000090030 and its value is Jon
+
+*/
