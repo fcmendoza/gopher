@@ -1,0 +1,16 @@
+// As a reference (no pun intented), this is how by ref and by value is done in C#:
+// https://dotnetfiddle.net/X16crq
+
+package main
+
+import "fmt"
+
+func main() {
+	name := "Jon"
+	fmt.Println("\nValue of *name* is", name)
+
+	fmt.Println("Memory value of *name* is", &name)
+
+	ptr := &name
+	fmt.Println("Pointer to *name* address is", ptr)
+}
