@@ -34,7 +34,13 @@ type greeter = func(a, b string) string
 
 func NewConverter() Converter {
 	return func(plan string, cycle int) string {
-		return plan + " " + strconv.Itoa(cycle)
+		return "(NewConverter)\t" + plan + " - " + strconv.Itoa(cycle)
+	}
+}
+
+func NewConverter2(extra string) Converter {
+	return func(plan string, cycle int) string {
+		return "(NewConverter2)\t" + plan + " - " + strconv.Itoa(cycle) + ". Extra: " + extra
 	}
 }
 
@@ -56,9 +62,13 @@ func main() {
 
 	//var age Int32 = 1
 
-	var converter Converter = func (plan string, cycle int) string {
-		return  plan + " - " + strconv.Itoa(cycle)
+	var converter1 Converter = func (plan string, cycle int) string {
+		return  plan + strconv.Itoa(cycle)
 	}
+
+	var converter2 = NewConverter()
+
+	converter3 := NewConverter()
 
 	// r := convert("Plan No.", 1)
 	// fmt.Println(r)
@@ -66,8 +76,11 @@ func main() {
 	// c := Converter("Plan NUM.", 2)
 	// fmt.Println(c)
 
-	converter("Plan ID", 5);
-
+	summaryGetter(converter1)
+	summaryGetter(converter2)
+	summaryGetter(converter3)
+	summaryGetter(NewConverter2("yo"))
+	summaryGetter(NewConverter2("hi"))
 }
 
 // like javascript where we can accept a function 
