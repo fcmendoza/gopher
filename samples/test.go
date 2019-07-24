@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println("Test from", runtime.GOOS)
+	fmt.Println("Test from Gophercon 2019 (", runtime.GOOS, ")")
 }
